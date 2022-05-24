@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/cell.counts.plane.html</loc>
+  </url>
+  <url>
+    <loc>/reference/hello.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/intensity.plane.html</loc>
+  </url>
+  <url>
+    <loc>/reference/overall.cell.counts.html</loc>
+  </url>
+  <url>
+    <loc>/reference/overall.intensity.html</loc>
+  </url>
+  <url>
+    <loc>/reference/overall.percent.area.html</loc>
+  </url>
+  <url>
+    <loc>/reference/percent.area.plane.html</loc>
+  </url>
+</urlset>
