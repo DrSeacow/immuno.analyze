@@ -45,7 +45,7 @@ When imaging your tissue initially, it is critical that the output filenames are
 To mitigate experimenter bias (throughout all stages of the experimental process, but including this one) it is recommended that the group names are codified in a way agnostic to experimental treatment.
 }
 \examples{
-overall.percent.area("percent_ps6_BLA", "percent", "Ctrl", "Switch", 6, data = "percent_ps6_BLA.csv")
+immuno.analyze::overall.percent.area("percent_ps6_BLA", "percent", "Ctrl", "Switch", 6, data = "percent_ps6_BLA.csv")
 
 }
 \references{

@@ -33,7 +33,7 @@ percent.area.plane(
 \item{x}{The name of your .CSV file.}
 }
 \value{
-The analysis table for a two-sample T-Test comparing the groups, as well as a rudimentary barplot.
+A three-item vector containing the P-Values for unpaired-samples T-Tests between groups at each level of the second factor (plane of tissue), as well as three side-by-side plots corresponding to each comparison.
 }
 \description{
 Processes .CSV files output by the "percent-area" batch macro in the ImageJ custom macros plugin (Timothy and Forlano, 2019).
@@ -51,7 +51,7 @@ When imaging your tissue initially, it is critical that the output filenames are
 To mitigate experimenter bias (throughout all stages of the experimental process, but including this one) it is recommended that the group names are codified in a way agnostic to experimental treatment.
 }
 \examples{
-percent.area.plane("percent_ps6_BLA_ant", "med", "pos", "percent", "Ctrl", "Switch", 6, data = "percent_ps6_BLA.csv")
+immuno.analyze::percent.area.plane("percent_ps6_BLA_ant", "med", "pos", "percent", "Ctrl", "Switch", 6, data = "percent_ps6_BLA.csv")
 
 }
 \references{

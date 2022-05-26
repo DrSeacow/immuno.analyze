@@ -23,7 +23,7 @@
 #' @param n_per_group How many subjects are included in each group. Used to compute standard error of the mean for error bars on barplot.
 #' @param x The name of your .CSV file.
 #' @return The analysis table for a two-sample T-Test comparing the groups, as well as a rudimentary barplot.
-#' @examples overall.percent.area("percent_ps6_BLA", "percent", "Ctrl", "Switch", 6, data = "percent_ps6_BLA.csv")
+#' @examples immuno.analyze::overall.percent.area("percent_ps6_BLA", "percent", "Ctrl", "Switch", 6, data = "percent_ps6_BLA.csv")
 #'
 #' @references Timothy, M., & Forlano, P. M. (2019). A versatile macro-based neurohistological image analysis suite for ImageJ focused on automated and standardized user interaction and reproducible data output. Journal of neuroscience methods, 324, 108286. https://doi.org/10.1016/j.jneumeth.2019.04.009
 

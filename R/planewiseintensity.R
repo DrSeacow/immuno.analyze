@@ -24,11 +24,10 @@
 #' @param second_group How the other group is codified. Note: "first_group" and "second_group" must be alphabetized in the respective order of your codified group names.
 #' @param n_per_group How many subjects are included in each group. Used to compute standard error of the mean for error bars on barplot.
 #' @param x The name of your .CSV file.
-#' @return The analysis table for a two-sample T-Test comparing the groups, as well as a rudimentary barplot.
-#' @examples intensity.plane("VTA_Intensity_ant", "med", "pos", "Cell_Counts", "Ctrl", "Switch", 6, data = "outline_VTA.csv")
+#' @return A three-item vector containing the P-Values for unpaired-samples T-Tests between groups at each level of the second factor (plane of tissue), as well as three side-by-side plots corresponding to each comparison.
+#' @examples immuno.analyze::intensity.plane("VTA_Intensity_ant", "med", "pos", "Cell_Counts", "Ctrl", "Switch", 6, data = "outline_VTA.csv")
 #'
 #' @references Timothy, M., & Forlano, P. M. (2019). A versatile macro-based neurohistological image analysis suite for ImageJ focused on automated and standardized user interaction and reproducible data output. Journal of neuroscience methods, 324, 108286. https://doi.org/10.1016/j.jneumeth.2019.04.009
-
 
 intensity.plane <- function(graph_name_1, graph_name_2, graph_name_3, DV, first_group, second_group, n_per_group, data = x){
 

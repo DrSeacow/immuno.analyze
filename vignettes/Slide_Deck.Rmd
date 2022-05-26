@@ -1,0 +1,89 @@
+---
+title: "Intro to Immuno Analyze"
+author: "Dan Siegel"
+date: "5/25/2022"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Context for immuno.analyze
+
+Experiments involving tissue histology and immunofluorescence preparations can be extremely time-and-labor intensive. Anything that can improve efficiency for any step of the process is welcome progress.
+
+The immuno.analyze package aims to streamline the process of data analysis, summarizing between-group comparisons for immunofluorescence data. 
+
+## Data from ImageJ "Custom Macros"
+
+- This package makes use of the data output by batch macros for the "percent area" and "cell outline" analyses available in the "Custom Macros" plugin for ImageJ (Timothy and Forlano, 2019).
+
+- For immuno.analyze to function properly in processing these data, it is critical that- when initially collecting images of tissue- they are saved with the following file name format: "Group_Experimente_SubjectID_MagX_Plane_Side_Region"
+
+## Percent area 
+- "Percent area" refers to the proportion of a selected target region with above-threshold intensity. 
+
+- Data can be extracted for either a single color channel, or for cells exhibiting colocalized signals between multiple channels. 
+
+## Cell outline
+- The "cell outline" batch macro detects discrete cell bodies and documents their characteristics as individual rows.
+- This yields multiple relevant measurements, that correspond to different functions within immuno.analyze.
+
+- "Cell counts" refers to the number of rows in the datafile, as a proxy for the number of cells exhibiting above-threshold intensity.
+- "Intensity" analyses take the average "mean gray value" (effectively "brightness") of all cells on a given image, as a proxy for intracellular firing rate.
+
+## Plane-wise analysis
+- For tissue analysis studies, particularly in behavioral neurobiology research, it is well-advised to collect samples of tissue along multiple areas within a given target region. 
+
+- These samples can be averaged together, or analyzed as separate regions.
+
+- Immuno.analyze treats  plane as a three-level factor. It possesses three functions that average across them, and three that analyze them separately.
+
+## What does immuno.analyze do?
+
+- Processes .CSV files of the custom macros format. Groups data according to subject ID, plane, and group factors.
+
+- Outputs the results of an unpaired-samples T-Test comparing the two groups, as well as a simple plot to visualize the results.
+
+- "Overall" functions return the entire T-Test table and a single plot. "Plane" functions return a vector with the three respective p-values (each plane) and three side-by-side plots.
+
+## Functions
+
+- overall.percent.area
+  - Percent area, averaged across location.
+- percent.area.plane 
+  - Percent area, differentiating across location.
+- overall.cell.counts
+  - Cells detected, averaged across location.
+- cell.counts.plane 
+  - Cells detected, differentiating across location.
+- overall.intensity 
+  - Mean cell intensity, averaged across location.
+- intensity.plane 
+  - Mean cell intensity, differentiating across location.
+  
+## Example
+
+- P-Values for unpaired-samples t-tests across anterior, middle, and posterior sections (respectively) of the basolateral amygdala.
+
+- immuno.analyze::percent.area.plane("PS6_%Area_BLA_Ant", "Med", "Pos", "PS6_Area_Percent", "Ctrl", "Switch", 6, "percent_ps6_BLA.csv")
+
+```{r T_Display, message = FALSE, warning = FALSE}
+print(immuno.analyze::percent.area.plane("PS6_%Area_BLA_Ant", "Med", "Pos", "PS6_Area_Percent", "Ctrl", "Switch", 6, "percent_ps6_BLA.csv")[[1]])
+```
+
+## Slide with Plot
+
+```{r Plot_Display}
+print(immuno.analyze::percent.area.plane("PS6_%Area_BLA_Ant", "Med", "Pos", "PS6_Area_Percent", "Ctrl", "Switch", 6, "percent_ps6_BLA.csv")[[2]])
+```
+
+## Other Notes
+- ImageJ "Custom Macros" Plugin reference:
+  - Timothy, M., & Forlano, P. M. (2019). A versatile macro-based neurohistological image analysis suite for ImageJ focused on automated and standardized user interaction and reproducible data output. Journal of neuroscience methods, 324, 108286. https://doi.org/10.1016/j.jneumeth.2019.04.009
+  
+- R documentation website for immuno.analyze:
+  - https://drseacow.github.io/immuno.analyze/index.html 
+
+

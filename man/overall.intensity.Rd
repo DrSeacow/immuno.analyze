@@ -45,7 +45,7 @@ When imaging your tissue initially, it is critical that the output filenames are
 To mitigate experimenter bias (throughout all stages of the experimental process, but including this one) it is recommended that the group names are codified in a way agnostic to experimental treatment.
 }
 \examples{
-overall.intensity("VTA_Intensity", "Intensity", "Ctrl", "Switch", 6, data = "outline_VTA.csv")
+print(immuno.analyze::overall.intensity("VTA_Intensity", "Intensity", "Ctrl", "Switch", 6, data = "outline_VTA.csv"))
 
 }
 \references{
